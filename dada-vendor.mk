@@ -7,8 +7,9 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Fingerprint HAL modules
 PRODUCT_COPY_FILES += \
-    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.goodix_us.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.goodix_us.so \
-    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.qcom_us.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.qcom_us.so
+    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.goodix_us.default.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.goodix_us.default.so \
+    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.qcom_us.default.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.qcom_us.default.so \
+    vendor/xiaomi/dada/proprietary/odm/lib64/libqc_hal.so:$(TARGET_COPY_OUT_ODM)/lib64/libqc_hal.so
 
 # Graphics allocator V1 (needed by camera HAL blobs)
 PRODUCT_COPY_FILES += \
@@ -2346,6 +2347,7 @@ PRODUCT_PACKAGES += \
     libmmcamera_mfnr_t4 \
     libmmcamera_pdpc \
     libmmfp \
+    libgf_hal \
     libmorpho_Depurple \
     libmpbase \
     libocr_api \

@@ -19614,3 +19614,20 @@ cc_prebuilt_library_shared {
     device_specific: true,
     check_elf_files: false,
 }
+
+cc_prebuilt_library_shared {
+    name: "libgf_hal",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/odm/lib64/libgf_hal.so"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+    check_elf_files: false,
+}
