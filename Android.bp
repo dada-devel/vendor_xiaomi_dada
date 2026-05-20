@@ -13,6 +13,26 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
+    name: "libultrahdr_dada",
+    owner: "xiaomi",
+    stem: "libultrahdr_dada",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libultrahdr.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
     name: "libSNPESample",
     owner: "xiaomi",
     strip: {
@@ -318,7 +338,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -338,7 +357,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -358,7 +376,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -378,7 +395,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -398,7 +414,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -418,7 +433,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -438,7 +452,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -458,7 +471,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -478,7 +490,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -498,7 +509,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -518,7 +528,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -538,7 +547,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -558,7 +566,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -578,7 +585,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -598,7 +604,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -618,7 +623,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -638,7 +642,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -658,7 +661,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -678,7 +680,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -698,7 +699,6 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
     relative_install_path: "rfs/dsp",
     prefer: true,
     soc_specific: true,
@@ -6631,7 +6631,7 @@ cc_prebuilt_library_shared {
                 "librfs_warp",
                 "libion",
                 "libOpenCL",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7097,6 +7097,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "com.xiaomi.plugin.gainmap",
+    check_elf_files: false,
     owner: "xiaomi",
     strip: {
         none: true,
@@ -7114,7 +7115,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.pluginutils",
                 "libcom.xiaomi.metadatautils",
                 "libcom.xiaomi.debug",
-                "libultrahdr_prebuilt",
+                "libultrahdr_dada",
                 "libjpeg",
                 "libc++",
                 "libc",
@@ -7200,6 +7201,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "com.xiaomi.plugin.jpegrAggr",
+    check_elf_files: false,
     owner: "xiaomi",
     strip: {
         none: true,
@@ -7220,7 +7222,7 @@ cc_prebuilt_library_shared {
                 "libjpeg",
                 "libexif",
                 "libimage_io",
-                "libultrahdr_prebuilt",
+                "libultrahdr_dada",
                 "libz",
                 "libc++",
                 "libc",
@@ -7601,7 +7603,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7636,7 +7638,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7671,7 +7673,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7706,7 +7708,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7741,7 +7743,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7776,7 +7778,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7811,7 +7813,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7846,7 +7848,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7881,7 +7883,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7916,7 +7918,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7951,7 +7953,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -7986,7 +7988,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -8021,7 +8023,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.debug",
                 "libpostprocinfo",
                 "libhardware",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libc",
                 "libm",
@@ -11851,7 +11853,7 @@ cc_prebuilt_library_shared {
                 "libmialgo_utils",
                 "libion",
                 "libOpenCL",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libvega_common",
                 "libecdpreproc",
                 "libc++",
@@ -12063,6 +12065,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "com.qti.chi.override",
+    check_elf_files: false,
     owner: "xiaomi",
     strip: {
         none: true,
@@ -12109,7 +12112,6 @@ cc_prebuilt_library_shared {
                 "libgrallocutils",
                 "libmapperutils",
                 "libvndksupport",
-                "android.hardware.graphics.allocator-V2-ndk",
                 "android.hardware.graphics.allocator-V2-ndk",
                 "android.hardware.graphics.common@1.1",
                 "libbinder_ndk",
@@ -13249,6 +13251,63 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libbitml_nsp_73na_skel",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/rfs/dsp/libbitml_nsp_73na_skel.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "rfs/dsp",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libbitml_nsp_79na_skel",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/rfs/dsp/libbitml_nsp_79na_skel.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "rfs/dsp",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libbitml_nsp_skel",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/rfs/dsp/libbitml_nsp_skel.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "rfs/dsp",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libc++_shared",
     owner: "xiaomi",
     strip: {
@@ -13421,7 +13480,7 @@ cc_prebuilt_library_shared {
                 "libcamxcsl",
                 "libcamximageformatutils",
                 "libcamxsettingsmanager",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libcutils",
                 "liblog",
@@ -13695,6 +13754,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libcamximageformatutils",
+    check_elf_files: false,
     owner: "xiaomi",
     strip: {
         none: true,
@@ -13720,7 +13780,6 @@ cc_prebuilt_library_shared {
                 "libgrallocutils",
                 "libmapperutils",
                 "libvndksupport",
-                "android.hardware.graphics.allocator-V2-ndk",
                 "android.hardware.graphics.allocator-V2-ndk",
                 "android.hardware.graphics.common@1.1",
                 "libbinder_ndk",
@@ -13798,7 +13857,7 @@ cc_prebuilt_library_shared {
                 "libcamxcsl",
                 "libcamximageformatutils",
                 "libcamxsettingsmanager",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libc++",
                 "libcutils",
                 "liblog",
@@ -14091,6 +14150,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libchifeature2",
+    check_elf_files: false,
     owner: "xiaomi",
     strip: {
         none: true,
@@ -14137,7 +14197,6 @@ cc_prebuilt_library_shared {
                 "libgrallocutils",
                 "libmapperutils",
                 "libvndksupport",
-                "android.hardware.graphics.allocator-V2-ndk",
                 "android.hardware.graphics.allocator-V2-ndk",
                 "android.hardware.graphics.common@1.1",
                 "libbinder_ndk",
@@ -16828,7 +16887,7 @@ cc_prebuilt_library_shared {
                 "vendor.xiaomi.hardware.camera.injection-client",
                 "libbase",
                 "libbinder_ndk",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libmicamera_aidl_device",
                 "libmicamera_aidl_utils",
                 "libcom.xiaomi.metadatautils",
@@ -16964,7 +17023,7 @@ cc_prebuilt_library_shared {
                 "libcom.xiaomi.ecoenginemonitor",
                 "libcom.xiaomi.sensorpolicy",
                 "libcom.xiaomi.pluginutils",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libmicamGlobalPool",
                 "libcameraopt",
                 "vendor.xiaomi.hardware.camera.synthetic-V1-ndk",
@@ -18387,7 +18446,7 @@ cc_prebuilt_library_shared {
                 "libutilscallstack",
                 "com.xiaomi.immunesystem.bigdata",
                 "libcamximageformatutils",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libz",
                 "libc",
                 "libm",
@@ -19224,7 +19283,7 @@ cc_prebuilt_binary {
                 "android.hardware.common.fmq-V1-ndk",
                 "android.hidl.allocator@1.0",
                 "android.hidl.memory@1.0",
-                "libtinyxml2-v34",
+                "libtinyxml2",
                 "libutilscallstack",
                 "libDlhookDumpStates",
                 "libc++",
@@ -19444,4 +19503,114 @@ install_symlink {
     soc_specific: true,
     installed_location: "lib64/qsn3all.bin",
     symlink_target: "/odm/lib64/qsn3all.bin",
+}
+
+// Stock gralloc prebuilts for camera HAL compatibility
+cc_prebuilt_library_shared {
+    name: "libgralloccore",
+    vendor: true,
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libgralloccore.so"],
+        },
+    },
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgrallocutils",
+    vendor: true,
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libgrallocutils.so"],
+        },
+    },
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "libgralloc.qti",
+    vendor: true,
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libgralloc.qti.so"],
+        },
+    },
+    check_elf_files: false,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.qti.hardware.display.allocator-service",
+    vendor: true,
+    strip: {
+        none: true,
+    },
+    srcs: ["proprietary/vendor/bin/hw/vendor.qti.hardware.display.allocator-service"],
+    check_elf_files: false,
+    init_rc: ["proprietary/vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc"],
+    vintf_fragments: ["proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml"],
+}
+
+// ODM DSP libraries
+cc_prebuilt_library_shared {
+    name: "libapn_dsp_skel",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/odm/lib64/rfs/dsp/libapn_dsp_skel.so"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "rfs/dsp",
+    prefer: true,
+    device_specific: true,
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "libhdr_skel",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/odm/lib64/rfs/dsp/libhdr_skel.so"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "rfs/dsp",
+    prefer: true,
+    device_specific: true,
+    check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqsegnetengine_dsp_skel",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/odm/lib64/rfs/dsp/libqsegnetengine_dsp_skel.so"],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "rfs/dsp",
+    prefer: true,
+    device_specific: true,
+    check_elf_files: false,
 }

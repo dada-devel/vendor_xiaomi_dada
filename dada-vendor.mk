@@ -5,6 +5,25 @@
 PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/dada
 
+# Fingerprint HAL modules
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.goodix_us.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.goodix_us.so \
+    vendor/xiaomi/dada/proprietary/odm/lib64/hw/fingerprint.qcom_us.so:$(TARGET_COPY_OUT_ODM)/lib64/hw/fingerprint.qcom_us.so
+
+# Graphics allocator V1 (needed by camera HAL blobs)
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/android.hardware.graphics.allocator-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.graphics.allocator-V1-ndk.so
+
+# Stock libc++ for vendor (needed by camera HAL blobs)
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/dada/proprietary/vendor/lib64/libc++.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libc++.so
+
+# Product display config (auto brightness)
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/display_id_4630946682710401939.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_4630946682710401939.xml \
+    vendor/xiaomi/dada/proprietary/product/etc/displayconfig/display_id_4630947212918452371.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/displayconfig/display_id_4630947212918452371.xml
+
+# ACDB and audio configs
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/odm/etc/acdbdata/Fluence/Fluence_acdb_cal.acdb:$(TARGET_COPY_OUT_ODM)/etc/acdbdata/Fluence/Fluence_acdb_cal.acdb \
     vendor/xiaomi/dada/proprietary/odm/etc/acdbdata/Fluence/Fluence_workspaceFileXml.qwsp:$(TARGET_COPY_OUT_ODM)/etc/acdbdata/Fluence/Fluence_workspaceFileXml.qwsp \
@@ -1818,6 +1837,13 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/dada/proprietary/vendor/etc/camera/cameraopt_perf.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/cameraopt_perf.json \
     vendor/xiaomi/dada/proprietary/vendor/etc/camera/cameraopt_vendor.json:$(TARGET_COPY_OUT_VENDOR)/etc/camera/cameraopt_vendor.json
 
+# Stock gralloc prebuilts for camera HAL compatibility
+PRODUCT_PACKAGES += \
+    libgralloccore \
+    libgrallocutils \
+    libgralloc.qti \
+    vendor.qti.hardware.display.allocator-service
+
 PRODUCT_PACKAGES += \
     libSNPESample \
     libcamera2ndk_vendor \
@@ -1831,6 +1857,9 @@ PRODUCT_PACKAGES += \
     libopencv_imgproc_se \
     libVppAisQnnHtp \
     libVppFrcQnnHtp \
+    libapn_dsp_skel \
+    libhdr_skel \
+    libqsegnetengine_dsp_skel \
     libdpp_engine_skel \
     libdspCV_skel \
     libevadsp \
@@ -2187,6 +2216,9 @@ PRODUCT_PACKAGES += \
     libarcsoft_turbo_hdr_raw_portrait \
     libbitmlengine \
     libbitmlenginev2 \
+    libbitml_nsp_73na_skel \
+    libbitml_nsp_79na_skel \
+    libbitml_nsp_skel \
     libc++_shared \
     libcalculator \
     libcamera_scene \
